@@ -4,21 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store'
-import {addTodo, completeTodo, showAll, showComplete} from './redux/actions'
+import ReduxContext from './contexts/ReduxContexts';
+// import {addTodo, completeTodo, showAll, showComplete} from './redux/actions'
 
 
 
 /**
  * subscribe 
  * */
-const unsubscribe = store.subscribe(() => { // rx의 subscribe와 비슷함. 또는 vue의 watch.
-  console.log(store.getState())
-})
-store.dispatch(addTodo('할일'))
-store.dispatch(completeTodo(0))
-// unsubscribe는 함수이며, 호출하면 더 이상 subscribe를 하지 않는다. rx의 dispose와 같음.
-store.dispatch(showAll())
-store.dispatch(showComplete())
+// const unsubscribe = store.subscribe(() => { // rx의 subscribe와 비슷함. 또는 vue의 watch.
+//   console.log(store.getState())
+// })
+// store.dispatch(addTodo('할일'))
+// store.dispatch(completeTodo(0))
+// // unsubscribe는 함수이며, 호출하면 더 이상 subscribe를 하지 않는다. rx의 dispose와 같음.
+// store.dispatch(showAll())
+// store.dispatch(showComplete())
 
 
 // mutation
@@ -35,7 +36,9 @@ store.dispatch(showComplete())
 
 ReactDOM.render(
   <React.StrictMode>
+    <ReduxContext.Provider value={store}>
     <App />
+    </ReduxContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
