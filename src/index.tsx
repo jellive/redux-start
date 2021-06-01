@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store'
 import ReduxContext from './contexts/ReduxContexts';
+import {Provider} from 'react-redux'
+
 // import {addTodo, completeTodo, showAll, showComplete} from './redux/actions'
 
 
@@ -34,11 +36,13 @@ import ReduxContext from './contexts/ReduxContexts';
  * subscribe 
  * */
 
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <ReduxContext.Provider value={store}>
+    <Provider store={store}>
     <App />
-    </ReduxContext.Provider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
