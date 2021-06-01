@@ -1,8 +1,12 @@
-const ADD_TODO = 'ADD_TODO'
+export const ADD_TODO = 'ADD_TODO'
 
-function addTodo(todo: string) {
+
+//action 
+export function addTodo(todo: string) {
     return {
         type: ADD_TODO,
         todo
     }
 }
+
+//reducer
