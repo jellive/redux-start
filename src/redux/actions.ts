@@ -1,5 +1,5 @@
-export const ADD_TODO = 'ADD_TODO'
-export const COMPLETE_TODO = 'COMPLETE_TODO'
+export const ADD_TODO = 'ADD_TODO' as const // const assertions, string이 되지 않고 실제값을 가리킴. 여기서는 컴파일러가 'string' 타입이 아닌 'ADD_TODO' 타입이 된다.
+export const COMPLETE_TODO = 'COMPLETE_TODO' as const
 
 
 //action creator
