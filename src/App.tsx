@@ -4,8 +4,8 @@ import './App.css';
 import { addTodo } from './redux/actions';
 import useReduxDispatch from './hooks/useReduxDispatch';
 import useReduxState from './hooks/useReduxState';
-import TodoList from './components/TodoList';
-import TodoForm from './components/TodoForm';
+import TodoListContainer from './containers/TodoListContainer';
+import TodoFormContainer from './containers/TodoFormContainer';
 
 
 
@@ -16,10 +16,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-      <TodoList />
-
-      <TodoForm />
-        {/* <button onClick={click}>추가</button> */}
+      <TodoListContainer />
+      <TodoFormContainer />
       </header>
       
       
@@ -27,7 +25,6 @@ function App() {
   );
 
   function click() {
-    // store.dispatch(addTodo('추가됨'))
     dispatch(addTodo('todo'))
   }
 }
